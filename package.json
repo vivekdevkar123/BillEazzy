@@ -2,6 +2,7 @@
   "name": "billeazzy-webpage",
   "version": "1.0.0",
   "description": "BillEazzy Business Website",
+  "homepage": "https://vivekdevkar123.github.io/BillEazzy",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
