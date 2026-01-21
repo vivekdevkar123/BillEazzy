@@ -17,7 +17,7 @@ const Footer = () => {
                     width={120}
                     height={40}
                     className="h-auto rounded-lg"
-                    style={{ width: '120px', height: 'auto', borderRadius: '8px' }}
+                    style={{ width: '120px', height: 'auto' }}
                   />
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
@@ -195,7 +195,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/#pricing"
+                      href="/plans"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       View Plans

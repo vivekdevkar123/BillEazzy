@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
+    <section id="contact" className="overflow-hidden pt-32 pb-16 md:pt-20 md:pb-20 lg:pt-28 lg:pb-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap justify-center">
           <div className="w-full px-4">

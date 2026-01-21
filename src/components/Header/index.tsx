@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
-import PlansModal from "../Pricing/PlansModal";
 import menuData from "./menuData";
 
 const Header = () => {
@@ -37,9 +36,6 @@ const Header = () => {
     }
   };
 
-  // Plans modal handler
-  const [isPlansModalOpen, setIsPlansModalOpen] = useState(false);
-
   const usePathName = usePathname();
 
   return (
@@ -66,7 +62,7 @@ const Header = () => {
                   width={85}
                   height={30}
                   className="h-auto rounded-lg"
-                  style={{ width: '85px', height: 'auto', borderRadius: '8px' }}
+                  style={{ width: '85px', height: 'auto' }}
                 />
               </Link>
             </div>
@@ -154,28 +150,34 @@ const Header = () => {
                         )}
                       </li>
                     ))}
-                    {/* Mobile Plans Button */}
+                    {/* Mobile Plans Link */}
                     <li className="lg:hidden">
-                      <button
-                        onClick={() => {
-                          setIsPlansModalOpen(true);
-                          setNavbarOpen(false);
-                        }}
-                        className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 flex w-full rounded-xs px-6 py-2.5 text-sm font-medium text-white transition duration-300"
+                      <Link
+                        href="/plans"
+                        onClick={() => setNavbarOpen(false)}
+                        className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                          usePathName === "/plans"
+                            ? "text-primary dark:text-white"
+                            : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                        }`}
                       >
                         View Plans
-                      </button>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
               </div>
               <div className="flex items-center justify-end gap-4 pr-16 lg:pr-0">
-                <button
-                  onClick={() => setIsPlansModalOpen(true)}
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 hidden rounded-xs px-6 py-2.5 text-sm font-medium text-white transition duration-300 md:block lg:px-6 xl:px-8"
+                <Link
+                  href="/plans"
+                  className={`hidden py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 md:block ${
+                    usePathName === "/plans"
+                      ? "text-primary dark:text-white"
+                      : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                  }`}
                 >
                   View Plans
-                </button>
+                </Link>
                 <div>
                   <ThemeToggler />
                 </div>
@@ -184,10 +186,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <PlansModal
-        isOpen={isPlansModalOpen}
-        onClose={() => setIsPlansModalOpen(false)}
-      />
     </>
   );
 };

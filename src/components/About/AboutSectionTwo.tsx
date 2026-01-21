@@ -5,7 +5,7 @@ const AboutSectionTwo = () => {
     <section className="py-16 md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
-          <div className="w-full px-4 lg:w-1/2">
+          <div className="hidden w-full px-4 lg:block lg:w-1/2">
             <div
               className="relative mx-auto mb-12 aspect-25/24 max-w-[500px] text-center lg:m-0"
               data-wow-delay=".15s"
@@ -14,13 +14,7 @@ const AboutSectionTwo = () => {
                 src="/images/about/about-image-2.svg"
                 alt="about image"
                 fill
-                className="drop-shadow-three dark:hidden dark:drop-shadow-none"
-              />
-              <Image
-                src="/images/about/about-image-2-dark.svg"
-                alt="about image"
-                fill
-                className="hidden drop-shadow-three dark:drop-shadow-none"
+                className="drop-shadow-three"
               />
             </div>
           </div>
