@@ -126,6 +126,18 @@ layer(base);
   body {
     font-family: "Inter", sans-serif;
   }
+
+  /* Add scroll margin to sections to account for sticky header */
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+
+  /* Adjust for smaller screens */
+  @media (max-width: 768px) {
+    section[id] {
+      scroll-margin-top: 80px;
+    }
+  }
 }
 
 @layer components {

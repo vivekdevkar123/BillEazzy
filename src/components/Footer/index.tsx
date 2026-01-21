@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { getImagePath } from "@/utils/imagePath";
 
 const Footer = () => {
   return (
@@ -13,7 +12,7 @@ const Footer = () => {
               <div className="mb-12 lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src={getImagePath("/images/logo/logo.png")}
+                    src="/images/logo/logo.png"
                     alt="BillEazzy Logo"
                     width={120}
                     height={40}

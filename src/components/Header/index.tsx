@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getImagePath } from "@/utils/imagePath";
 import ThemeToggler from "./ThemeToggler";
 import PlansModal from "../Pricing/PlansModal";
 import menuData from "./menuData";
@@ -62,7 +61,7 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src={getImagePath("/images/logo/logo.png")}
+                  src="/images/logo/logo.png"
                   alt="BillEazzy Logo"
                   width={85}
                   height={30}

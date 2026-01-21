@@ -3,7 +3,6 @@
 import VideoModal from "@/components/video-modal";
 import Image from "next/image";
 import { useState } from "react";
-import { getImagePath } from "@/utils/imagePath";
 import SectionTitle from "../Common/SectionTitle";
 
 export default function Video() {
@@ -26,7 +25,7 @@ export default function Video() {
               <div className="mx-auto max-w-[770px] overflow-hidden rounded-md">
                 <div className="relative aspect-77/40 items-center justify-center">
                   <Image
-                    src={getImagePath("/images/video/image.png")}
+                    src="/images/video/image.png"
                     alt="video image"
                     className="object-cover"
                     fill
@@ -52,7 +51,7 @@ export default function Video() {
             </div>
           </div>
 
-          <div className={`absolute right-0 bottom-0 left-0 z-[-1] h-full w-full bg-[url(${getImagePath("/images/video/shape.svg")})] bg-cover bg-center bg-no-repeat`}>
+          <div className="absolute right-0 bottom-0 left-0 z-[-1] h-full w-full bg-[url(/images/video/shape.svg)] bg-cover bg-center bg-no-repeat">
             {/* <div className="absolute bottom-0 left-0 right-0 z-[-1] "> */}
             {/* <img src="/images/video/shape.svg" alt="shape" className="w-full" /> */}
           </div>

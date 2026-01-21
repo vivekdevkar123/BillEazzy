@@ -163,33 +163,36 @@ const PlansModal = ({ isOpen, onClose }: PlansModalProps) => {
       onClick={onClose}
     >
       <div
-        className="relative max-h-[90vh] w-full max-w-7xl overflow-y-auto rounded-lg bg-white p-6 shadow-xl dark:bg-gray-dark md:p-8"
+        className="relative max-h-[90vh] w-full max-w-7xl overflow-y-auto rounded-lg bg-white shadow-xl dark:bg-gray-dark"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute right-4 top-4 rounded-full p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          aria-label="Close modal"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        {/* Sticky Close Button - Always visible at top */}
+        <div className="sticky top-0 z-10 flex justify-end bg-white px-4 pt-4 dark:bg-gray-dark md:px-8 md:pt-6">
+          <button
+            onClick={onClose}
+            className="rounded-full p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            aria-label="Close modal"
           >
-            <path
-              d="M18 6L6 18M6 6L18 18"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6L6 18M6 6L18 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
 
-        {/* Header */}
+        <div className="px-6 pb-6 md:px-8 md:pb-8">
+          {/* Header */}
         <div className="mb-8 text-center">
           <h2 className="mb-3 text-3xl font-bold text-black dark:text-white md:text-4xl">
             Choose Your Plan
@@ -222,18 +225,30 @@ const PlansModal = ({ isOpen, onClose }: PlansModalProps) => {
           ))}
         </div>
 
-        {/* Footer */}
-        <div className="mt-8 text-center">
-          <p className="text-body-color mb-4 text-sm dark:text-body-color-dark">
-            Need help choosing?{" "}
-            <Link
-              href="/contact"
+          {/* Footer */}
+          <div className="mt-8 text-center">
+            <p className="text-body-color mb-4 text-sm dark:text-body-color-dark">
+              Need help choosing?{" "}
+              <Link
+                href="/contact"
+                onClick={onClose}
+                className="text-primary hover:underline"
+              >
+                Contact our team
+              </Link>
+            </p>
+          </div>
+
+          {/* Mobile: Sticky Close Button at Bottom */}
+          <div className="sticky bottom-0 mt-6 flex justify-center border-t border-gray-200 bg-white pt-4 dark:border-gray-700 dark:bg-gray-dark md:hidden">
+            <button
               onClick={onClose}
-              className="text-primary hover:underline"
+              className="w-full rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-primary/90"
+              aria-label="Close modal"
             >
-              Contact our team
-            </Link>
-          </p>
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
