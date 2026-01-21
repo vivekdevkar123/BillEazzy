@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getImagePath } from "@/utils/imagePath";
 
 const Contact = () => {
   return (
@@ -22,7 +23,7 @@ const Contact = () => {
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
                   <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-gray-dark">
                     <Image
-                      src="/images/founder/vivek.jpeg"
+                      src={getImagePath("/images/founder/vivek.jpeg")}
                       alt="Vivek Devkar"
                       fill
                       className="object-cover"
@@ -88,7 +89,7 @@ const Contact = () => {
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
                   <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-lg dark:border-gray-dark">
                     <Image
-                      src="/images/founder/sopan.jpeg"
+                      src={getImagePath("/images/founder/sopan.jpeg")}
                       alt="Sopan Devkar"
                       fill
                       className="object-cover"
